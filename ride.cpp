@@ -4,7 +4,9 @@ PROG: ride
 LANG: C++
 */
 
-#include <bits/stdc++.h>
+#include <iostream>
+#include <fstream>
+#include <string>
 using namespace std;
 
 int encode(string word){
@@ -16,12 +18,14 @@ int encode(string word){
 }
 
 int main(){
+    ofstream fout("ride.out");
+    ifstream fin("ride.in");
     string comet, group;
-    cin >> comet >> group;
+    fin >> comet >> group;
     if(encode(comet) == encode(group)){
-        cout << "GO";
+        fout << "GO" << endl;
     }else{
-        cout << "STAY";
+        fout << "STAY" << endl;
     }
     return 0;
 }
